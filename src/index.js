@@ -1,9 +1,10 @@
 import css from "./css/style.css";
-// import 'babel-polyfill';
+import getPictures from './apiService.js'
+// import photoCard from './templstes/photoCard.hbs'
 
-// import './app';
-async function f() {
-  return 1;
-}
+const gallery=document.querySelector('.gallery')
 
-f().then(alert); // 1
+getPictures().then(galleryForm => {
+    // console.dir(a)
+    gallery.innerHTML=galleryForm
+});

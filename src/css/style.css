@@ -1,4 +1,17 @@
-body {
-  background-color: black;
-  color: wheat;
+li{
+    list-style: none;
 }
+.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
