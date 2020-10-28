@@ -1,10 +1,15 @@
 import css from "./css/style.css";
 import getPictures from './apiService.js'
-// import photoCard from './templstes/photoCard.hbs'
+import debounce from "lodash.debounce";
 
 const gallery=document.querySelector('.gallery')
+const searchForm=document.getElementById('search-form')
 
-getPictures().then(galleryForm => {
-    // console.dir(a)
-    gallery.innerHTML=galleryForm
-});
+
+searchForm.addEventListener('input', debounce((e) => {
+    getPictures(e.target.value).then(galleryForm => {
+        gallery.innerHTML = galleryForm
+    })
+}, 500))
+
+
